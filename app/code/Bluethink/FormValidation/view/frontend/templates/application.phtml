@@ -1,0 +1,111 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+
+$viewModel = $block->getViewModel();
+?>
+<form class="form contact"
+      action="<?= $escaper->escapeUrl($block->getFormAction())?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?= $escaper->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}' enctype="multipart/form-data">
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= $escaper->escapeHtml(__('Apply job')) ?></span></legend><br />
+        <div class="field note no-label">
+            <?= $escaper->escapeHtml(__('Please fill up the below details to submit your application.')) ?>
+        </div>
+        <div class="field name required">
+            <label class="label" for="name"><span><?= $escaper->escapeHtml(__('Name')) ?></span></label>
+            <div class="control">
+                <input name="name"
+                       id="name"
+                       title="<?= $escaper->escapeHtmlAttr(__('Name')) ?>"
+                       value="<?= $escaper->escapeHtmlAttr($viewModel->getUserName()) ?>"
+                       class="input-text required-entry"
+                       type="text"
+                    />
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?= $escaper->escapeHtml(__('Email')) ?></span></label>
+            <div class="control">
+                <input name="email"
+                       id="email"
+                       title="<?= $escaper->escapeHtmlAttr(__('Email')) ?>"
+                       value="<?= $escaper->escapeHtmlAttr($viewModel->getUserEmail()) ?>"
+                       class="input-text"
+                       type="email"
+                       data-validate="{required:true, 'validate-email':true}"
+                       data-msg-required="Please do not enter email"
+                       data-mage-init='{"mage/trim-input":{}}'
+                />
+            </div>
+        </div>
+
+        <div class="field job-option required">
+            <label class="label" for="job-option"><span><?= $escaper->escapeHtml(__('Job Options')) ?></span></label>
+            <div class="control">
+                <select name="job-option"
+                       id="job-option"
+                       title="<?= $escaper->escapeHtmlAttr(__('Job Options')) ?>"
+                       value=""
+                       class="input-text"
+                        type="select"
+                        data-validate="{'validate-select':true}">
+                    <option value="">Please select your job options</option>
+                    <option value="Magento Developer">Magento Developer</option>
+                    <option value="Java Developer">Java Developer</option>
+                    <option value="Python Developer">Python Developer</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="field resume required">
+            <label class="label" for="resume"><span><?= $escaper->escapeHtml(__('Upload Your Resume')) ?></span></label>
+            <div class="control">
+                <input name="resume"
+                       id="resume"
+                       title="<?= $escaper->escapeHtmlAttr(__('Upload Your Resume')) ?>"
+                       value=""
+                       class="input-text"
+                       type="file"
+                       data-validate="{'required-file':true}"/>
+            </div>
+        </div>
+        <div class="field description required">
+            <label class="label" for="description">
+                <span><?= $escaper->escapeHtml(__('Description')) ?></span>
+            </label>
+            <div class="control">
+                <textarea name="description"
+                          id="description"
+                          title="<?= $escaper->escapeHtmlAttr(__('Description')) ?>"
+                          class="input-text"
+                          cols="5"
+                          rows="3"
+                          data-validate="{required:true,'validate-sixty-words':true}"
+                ></textarea>
+            </div>
+        </div>
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+<!--            <input type="hidden" name="hideit" id="hideit" value="" />-->
+            <button type="submit" title="<?= $escaper->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                <span><?= $escaper->escapeHtml(__('Submit')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "contact-form"
+            }
+        }
+    }
+</script>

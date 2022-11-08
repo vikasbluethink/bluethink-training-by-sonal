@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceContainer name="content">
+        <block class="Bluethink\FormValidation\Block\Post" name="job_index_index" template="Bluethink_FormValidation::application.phtml" >
+        <arguments>
+            <argument name="view_model" xsi:type="object">Bluethink\FormValidation\ViewModel\UserDataProvider</argument>
+        </arguments>
+        </block>
+    </referenceContainer>
+</page>
