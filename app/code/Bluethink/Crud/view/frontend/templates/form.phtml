@@ -1,0 +1,105 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+
+$viewModel = $block->getViewModel();
+
+$id = $this->getRequest()->getParam('id');
+$data = $block->getUserDataById($id);
+
+// print_r(get_class_methods($data));die;
+?>
+<form class="form contact"
+      action="<?= $escaper->escapeUrl(isset($id) ? $block->getFormAction() . "save?id=" . $id : $block->getFormAction() . "save")?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?= $escaper->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}' enctype="multipart/form-data">
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= $escaper->escapeHtml(__('My Profile')) ?></span></legend><br />
+        <div class="field note no-label">
+            <?= $escaper->escapeHtml(__('Please fill up the below details to submit your profile.')) ?>
+        </div>
+        <div class="field name required">
+            <label class="label" for="name"><span><?= $escaper->escapeHtml(__('Name')) ?></span></label>
+            <div class="control">
+                <input name="name"
+                       id="name"
+                       title="<?= $escaper->escapeHtmlAttr(__('Name')) ?>"
+                       value="<?= !empty($id) ? $data->getName() : $block->escapeHtmlAttr($viewModel->getUserName()) ?>"
+                       class="input-text required-entry"
+                       type="text"
+                       data-validate="{required:true, 'validate-alphanum-with-spaces':true}"
+                    />
+            </div>
+        </div>
+
+        <div class="field score required">
+            <label class="label" for="score"><span><?= $escaper->escapeHtml(__('Score')) ?></span></label>
+            <div class="control">
+                <select name="score"
+                       id="score"
+                       title="<?= $escaper->escapeHtmlAttr(__('Score')) ?>"
+                       value="<?= !empty($id) ? $data->getScore() : "" ?>"
+                       class="input-text"
+                       type="select"
+                       data-validate="{'validate-select':true}">
+                    <option value="">Please select your Score</option>
+                    <option value="1" <?=(!empty($id) && $data->getScore() == 1) ? 'selected' : "" ?>>1</option>
+                    <option value="2" <?=(!empty($id) && $data->getScore() == 2) ? 'selected' : "" ?>>2</option>
+                    <option value="3" <?=(!empty($id) && $data->getScore() == 3) ? 'selected' : "" ?>>3</option>
+                    <option value="4" <?=(!empty($id) && $data->getScore() == 4) ? 'selected' : "" ?>>4</option>
+                    <option value="5" <?=(!empty($id) && $data->getScore() == 5) ? 'selected' : "" ?>>5</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="field profilephoto req!empty($id) && uired">
+            <label class="label" for="profilephoto"><span><?= $escaper->escapeHtml(__('Upload Your Profile Photo')) ?></span></label>
+            <div class="control">
+                <input name="profilephoto"
+                       id="profilephoto"
+                       title="<?= $escaper->escapeHtmlAttr(__('Upload Your profilephoto')) ?>"
+                       value="<?= !empty($id) ? $data->getProfilePhoto() : $block->escapeHtmlAttr($viewModel->getProfilePhoto()) ?>"
+                       class="input-text"
+                       type="file"
+                       data-validate="{'required-file':true}"/>
+            </div>
+        </div>
+        <div class="field remarks required">
+            <label class="label" for="remarks">
+                <span><?= $escaper->escapeHtml(__('Remarks')) ?></span>
+            </label>
+            <div class="control">
+                <textarea name="remarks"
+                          id="remarks"
+                          title="<?= $escaper->escapeHtmlAttr(__('Remarks')) ?>"
+                          class="input-text"
+                          cols="5"
+                          rows="3"
+                          data-validate="{required:true,validate-sixty-words:true}"
+                ><?= !empty($id) ? $data->getRemarks() : $block->escapeHtmlAttr($viewModel->getRemarks()) ?></textarea>
+            </div>
+        </div>
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+<!--            <input type="hidden" name="hideit" id="hideit" value="" />-->
+            <button type="submit" title="<?= $escaper->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                <span><?= $escaper->escapeHtml(__('Submit')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "contact-form"
+            }
+        }
+    }
+</script>
+

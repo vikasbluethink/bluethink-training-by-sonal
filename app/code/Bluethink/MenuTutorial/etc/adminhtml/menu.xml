@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Bluethink_MenuTutorial::menu1" title="Menu1" translate="title" module="Bluethink_MenuTutorial" sortOrder="35" resource="Bluethink_MenuTutorial::menu1"  />
+
+        <add id="Bluethink_MenuTutorial::heading1" title="Heading 1" translate="title" module="Bluethink_MenuTutorial" sortOrder="10" parent="Bluethink_MenuTutorial::menu1"  resource="Bluethink_MenuTutorial::heading1"/>
+
+        <add id="Bluethink_MenuTutorial::submenu1" title="Users Details" translate="title" module="Bluethink_MenuTutorial" sortOrder="10" parent="Bluethink_MenuTutorial::heading1" action="user/index/index" resource="Bluethink_MenuTutorial::submenu1"/>
+
+<!--        <add id="Bluethink_MenuTutorial::submenu2" title="Sub Menu2" translate="title" module="Bluethink_MenuTutorial" sortOrder="20" parent="Bluethink_MenuTutorial::heading1" action="catalog/category/" resource="Bluethink_MenuTutorial::submenu2"/>-->
+
+<!--        <add id="Bluethink_MenuTutorial::heading2" title="Heading 2" translate="title" module="Bluethink_MenuTutorial" sortOrder="10" parent="Bluethink_MenuTutorial::menu1"  resource="Bluethink_MenuTutorial::heading2"/>-->
+
+<!--        <add id="Bluethink_MenuTutorial::submenu3" title="Sub Menu3" translate="title" module="Bluethink_MenuTutorial" sortOrder="30" parent="Bluethink_MenuTutorial::heading2" action="catalog/product/" resource="Bluethink_MenuTutorial::submenu3"/>-->
+
+<!--        <add id="Bluethink_MenuTutorial::submenu4" title="Sub Menu4" translate="title" module="Bluethink_MenuTutorial" sortOrder="40" parent="Bluethink_MenuTutorial::heading2" action="catalog/category/" resource="Bluethink_MenuTutorial::submenu4"/>-->
+
+<!--        <add id="Bluethink_MenuTutorial::heading3" title="Heading 3" translate="title" module="Bluethink_MenuTutorial" sortOrder="10" parent="Bluethink_MenuTutorial::menu1"  resource="Bluethink_MenuTutorial::heading3"/>-->
+
+<!--        <add id="Bluethink_MenuTutorial::submenu3" title="Sub Menu3" translate="title" module="Bluethink_MenuTutorial" sortOrder="30" parent="Bluethink_MenuTutorial::heading3" action="catalog/product/" resource="Bluethink_MenuTutorial::submenu3"/>-->
+
+<!--        <add id="Bluethink_MenuTutorial::submenu4" title="Sub Menu4" translate="title" module="Bluethink_MenuTutorial" sortOrder="40" parent="Bluethink_MenuTutorial::heading3" action="catalog/category/" resource="Bluethink_MenuTutorial::submenu4"/>-->
+    </menu>
+</config>

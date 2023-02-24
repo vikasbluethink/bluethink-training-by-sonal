@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+     <menu>
+          <add id="Syncitgroup_Sgform::sgproduct"
+             title="Syncit Group"
+             module="Syncitgroup_Sgform"
+             sortOrder="20"
+             resource="Syncitgroup_Sgform::sgproduct" />
+          <add id="Syncitgroup_Sgform::faqgroup" 
+             title="Sg Product" 
+             module="Syncitgroup_Sgform" 
+             sortOrder="10" 
+             action="syncit/group/sgproduct" 
+             resource="Syncitgroup_Sgform::sgproduct" 
+             parent="Syncitgroup_Sgform::sgproduct"/>
+           
+     </menu>
+</config>

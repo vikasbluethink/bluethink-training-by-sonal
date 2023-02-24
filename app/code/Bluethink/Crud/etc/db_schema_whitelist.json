@@ -1,0 +1,31 @@
+{
+    "bluethink_testimonial": {
+        "column": {
+            "id": true,
+            "profile_photo": true,
+            "name": true,
+            "remarks": true,
+            "score": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "bluethink_test": {
+        "column": {
+            "id": true,
+            "profile_photo": true,
+            "name": true,
+            "remarks": true,
+            "score": true,
+            "created_at": true,
+            "updated_at": true,
+            "profile_photos": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

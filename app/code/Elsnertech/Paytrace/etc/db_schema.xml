@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Elsner Team
+ * @copyright Copyright © Elsner Technologies Pvt. Ltd (https://www.elsner.com/)
+ * @package Elsnertech_Paytrace
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="elsnertech_paytrace_customers" resource="default" engine="innodb" comment="Newsletter Subscriber">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="int" name="customer_id" unsigned="true" nullable="true" identity="false" default="0" comment="Customer Id"/>
+        <column xsi:type="varchar" length="300" name="paytrace_customer_id" nullable="true" comment="Paytrace Customer Id"/>
+        <column xsi:type="varchar" length="200" name="cc_number" nullable="true" comment="CC Number"/>
+        <column xsi:type="varchar" length="200" name="cc_year" nullable="true" comment="CC Year"/>
+        <column xsi:type="varchar" length="200" name="cc_month" nullable="true" comment="CC Month"/>
+        <column xsi:type="varchar" length="200" name="cc_type" nullable="true" comment="CC Type"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

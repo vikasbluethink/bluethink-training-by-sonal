@@ -1,0 +1,18 @@
+{
+    "syncitgroup_sgform_product": {
+        "column": {
+            "product_id": true,
+            "name": true,
+            "sku": true,
+            "price": true,
+            "taxClass": true,
+            "image": true,
+            "qty": true,
+            "weight": true,
+            "description": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

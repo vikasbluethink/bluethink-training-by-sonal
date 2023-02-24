@@ -1,0 +1,87 @@
+@btnb__color: #f6f7fa;
+@ccb__color: #efefef;
+@cccolum__color: #525252;
+@btdel__color: #757575;
+.payment-card {
+    .col {
+        img {
+            vertical-align: text-top;
+        }
+    }
+}
+.payment-card {
+    .col {
+        padding: 0 5px;
+    }
+}
+.saved-customer-vault {
+    .row {
+        &.payment-card {
+            align-items: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            -ms-flex-wrap: wrap;
+            -ms-flex-align: center;
+            -webkit-box-align: center;
+            .card-inner {
+                border: 1px solid rgba(0, 0, 0, 0.137);
+                border-radius: 5px;
+                background-color: @btnb__color;
+                border-color: @ccb__color;
+                padding: 0.5rem;
+                min-width: unset;
+                max-width: 350px;
+                margin: 0;
+                outline: none;
+                overflow: hidden;
+                display: table;
+                width: 100%;
+                
+                .col {
+                    padding: 8px;
+                    display: table-cell;
+                    vertical-align: middle;
+                    color: @cccolum__color;
+                }
+                .col.card-number {
+                    font-size: 13px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .action-delete {
+            text-align: right;
+            .delete {
+                background: transparent;
+                border: 0;
+                padding: 0;
+                color: @cccolum__color;
+                font-weight: 600;
+                transition: .25s ease-in-out all;
+                font-size: 0;
+                &:hover {
+                    color: #333;
+                }
+                &:before {
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-size: 18px;
+                    line-height: 20px;
+                    color: @btdel__color;
+                    content: '\e604';
+                    font-family: 'luma-icons';
+                    vertical-align: middle;
+                    display: inline-block;
+                    font-weight: normal;
+                    overflow: hidden;
+                    speak: none;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+}

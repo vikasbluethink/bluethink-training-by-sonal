@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="syncitgroup_sgform_product" resource="default" engine="innodb" comment="syncitgroup_sgform_product Table">
+		<column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="product_id"/>
+		</constraint>
+		<column name="name" nullable="true" xsi:type="varchar" comment="name" length="255"/>
+		<column name="sku" nullable="true" xsi:type="text" comment="sku"/>
+		<column name="price" nullable="true" xsi:type="int" comment="price" identity="false"/>
+		<column name="taxClass" nullable="true" xsi:type="text" comment="tax class"/>
+		<column name="image" nullable="true" xsi:type="text" comment="image"/>
+		<column name="qty" nullable="true" xsi:type="text" comment="qty"/>
+		<column name="weight" nullable="true" xsi:type="boolean" comment="weight"/>
+		<column name="description" nullable="true" xsi:type="text" comment="description"/>
+	</table>
+</schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Bluethink_Crud::css/custom.css"/>
+        <script src="Bluethink_Crud::js/custom.js"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Bluethink\Crud\Block\View" name="view_user_index" template="Bluethink_Crud::display.phtml" />
+        </referenceContainer>
+    </body>
+
+</page>

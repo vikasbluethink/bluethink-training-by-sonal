@@ -1,0 +1,16 @@
+{
+    "elsnertech_paytrace_customers": {
+        "column": {
+            "entity_id": true,
+            "customer_id": true,
+            "paytrace_customer_id": true,
+            "cc_number": true,
+            "cc_year": true,
+            "cc_month": true,
+            "cc_type": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

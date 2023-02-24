@@ -1,0 +1,17 @@
+<div id="new-product" data-bind="scope:'newproduct'"
+    data-mage-init='{"validation":{}}'>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+    {
+        "#new-product": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "newproduct": {
+                        "component": "Syncitgroup_Sgform/js/new-product"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+</div>

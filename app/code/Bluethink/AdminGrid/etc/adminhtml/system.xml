@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bluethink" translate="label" sortOrder="300">
+            <label>Bluethink User</label>
+        </tab>
+        <section id="bluethink" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Bluethink User Configuration</label>
+            <tab>bluethink</tab>
+            <resource>Bluethink_MenuTutorial::menu1</resource>
+            <group id="admingrid" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>Bluethink_AdminGrid Module Enable/Disable</label>
+                <field id="custom_email" translate="label comment" sortOrder="0" type="text" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enter Email Id</label>
+                    <validate>required-entry validate-email</validate>
+                </field>
+                <field id="allow" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Allowed Currencies</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Currency\Allow</backend_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

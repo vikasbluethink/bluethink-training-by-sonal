@@ -1,0 +1,119 @@
+<form class="component-wrapper form" id="productForm"
+      name="productForm"
+      method="post" data-bind="event: {submit: saveProduct}, mageInit:{'validation':{}}" enctype="multipart/form-data">
+    <div class="fieldset"
+         data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+        <div class="field name required">
+            <label class="label" for="name"><span data-bind="i18n: 'Name'">Name</span></label>
+            <div class="control">
+                <input name="name"
+                       id="name"
+                       type="text"
+                       class="input-text"
+                       data-validate="{required:true, 'validate-product-name':true}"
+                />
+            </div>
+        </div>
+        <div class="field sku required">
+            <label for="sku" class="label"><span data-bind="i18n: 'Sku'"></span></label>
+            <div class="control">
+                <input type="text"
+                       class="input-text required-entry"
+                       id="sku"
+                       name="sku"
+                       data-validate="{required:true,'validate-alphanum-with-spaces':true}"
+                       autocomplete="off"
+
+                />
+            </div>
+        </div>
+        <div class="field price required">
+            <label for="price" class="label"><span data-bind="i18n: 'Price'"></span></label>
+            <div class="control">
+                <input type="text"
+                       class="input-text"
+                       id="price"
+                       name="price"
+                       placeholder="$"
+                       data-validate="{required:true,'validate-alphanum-with-spaces':true}"
+                       autocomplete="off"/>
+            </div>
+        </div>
+
+        <div class="field taxClass required">
+            <label for="taxClass" class="label"><span data-bind="i18n: 'Tax Class'"></span></label>
+            <div class="control">
+                <select id="taxClass" name="taxClass">
+                    <option value="1">Tax Goods</option>
+                    <option value="2">Gift</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="field image-video required">
+            <label for="image" class="label"><span data-bind="i18n: 'Images and Videos'"></span></label>
+            <div class="control">
+                <input type="file" id="image" name="image[]"
+                        data-validate="{'required-file':true}"
+                  multiple/>
+            </div>
+        </div>
+
+        <div class="field quantity">
+            <label for="qty" class="label"><span data-bind="i18n: 'Quantity'"></span></label>
+            <div class="control">
+                <input type="number"
+                       class="input-text"
+                       id="qty"
+                       name="qty"
+                       placeholder=""
+                       data-validate="{required:true,'validate-alphanum-with-spaces':true}"
+                       autocomplete="off"/>
+            </div>
+        </div>
+
+        <div class="field weight required">
+            <label for="weight" class="label"><span data-bind="i18n: 'Weight'"></span></label>
+            <div class="control">
+                <label for="weight" class="label"><span data-bind="i18n: 'Does this have a weight'"></span></label>
+                <input type="checkbox" name="isWeight" checked/><span data-bind="i18n: 'Yes'"></span>
+                <input type="checkbox" name="isWeight" /><span data-bind="i18n: 'No'"></span>
+            </div>
+            <div class="control">
+                <input type="number"
+                       class="input-text"
+                       id="weight"
+                       name="weight"
+                       placeholder="lbs"
+                       data-validate="{required:true,'validate-alphanum-with-spaces':true}"
+                       autocomplete="off"/>
+            </div>
+        </div>
+
+        <div class="field description">
+            <label for="description" class="label"><span data-bind="i18n: 'Description'"></span></label>
+            <div class="control">
+                <textarea
+                    class="input-text"
+                    id="description"
+                    name="description"
+                    placeholder=""
+                    data-validate="{'validate-alphanum-with-spaces':true}"
+                    autocomplete="off">
+
+                </textarea>
+            </div>
+        </div>
+
+        <div class="field button required">
+            <div class="control">
+                <button id="button" name="submit" class="action-login action-primary" >
+                    <span data-bind="i18n: 'Save'"></span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+

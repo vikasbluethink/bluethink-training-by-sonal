@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="bluethink_testimonial" resource="default" engine="innodb" comment="Bluethink Testimonial">
+        <column xsi:type="int" name="id" identity="true" unsigned="true" nullable="false" comment="Id"/>
+        <column xsi:type="varchar" name="profile_photo" length="255" comment="Profile photo" />
+        <column xsi:type="varchar" name="name" nullable="true" length="255" comment="Name" />
+        <column xsi:type="varchar" name="remarks" length="255" comment="Remarks" />
+        <column xsi:type="varchar" name="score" length="255" comment="Score" />
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+
+    <table name="bluethink_test" resource="default" engine="innodb" comment="Bluethink Test" >
+        <column xsi:type="int" name="id" identity="true" unsigned="true" nullable="false" comment="Id"/>
+        <column xsi:type="varchar" name="profile_photos" length="255" comment="Profile photo" />
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name" />
+        <column xsi:type="varchar" name="remarks" length="255" comment="Remarks" />
+        <column xsi:type="varchar" name="score" length="255" comment="Score" />
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+</schema>

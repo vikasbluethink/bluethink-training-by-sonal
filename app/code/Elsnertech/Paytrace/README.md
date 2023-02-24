@@ -1,0 +1,9 @@
+PayTrace, a renown payment gateway provider, was formally incorporated in the year 2014. Today it has become one of the prominent industry leaders, providing highly secure, user-friendly payment processing services. The amazing part is that Paytrace is PCI certified. It consists of more than 35,000 clients with an overall transaction coverage of more than $10 billion every year. It is headquartered in Spokane, Washington.
+
+Thanks to an idea that came in the minds of the promoters at Elsner Technologies Pvt. Ltd., this extension got the thumbs up. This extension currently only processes payments in US currency. The positive part is that now you can avail Level 3 Credit Card Processing support and save your credit cards in a secure and PCI compliant manner due to Magento 2 Paytrace Payment Gateway extension.
+
+This extension eases up the task of the customers who purchase products on your eCommerce store by providing a direct transaction methodology. Due to this mechanism, your customers do not have to leave your eCommerce store to make the payment. It gets automatically done on the checkout page. What is more? Your customers end up getting a corresponding response promptly.
+
+This ingenious integration is extremely useful in providing trouble-free and coherent connections between Magento 2 store and the PayTrace credit card processing services. The only thing that you will require to avail of this amazing extension is a username and password, which will get you started! The sensitive nature of the information collected on your eCommerce store, which is then transmitted to PayTrace. This makes it all the more critical for you to get an SSL certificate to protect your customers’ information.
+
+Elsner is official integration partner of PayTrace.

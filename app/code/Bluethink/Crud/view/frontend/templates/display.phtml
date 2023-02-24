@@ -1,0 +1,50 @@
+<?php
+/**
+ * @var $block Bluethink\FormValidation\Block\View
+ */
+
+$data = $block->getUserData();
+?>
+<!-- <div class="actions"> -->
+<a href="<?= $escaper->escapeUrl($block->getFormAction())?>" type="button"class="action-login action-primary">
+<span>Add User</span>
+</a>
+<!-- </div> -->
+
+<Table class="container">
+    <tr>
+        <th>Profile Photo</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Remarks</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th style="text-align:center">Action</th>
+    </tr>
+<?php foreach ($data as $value): ?>
+    <tr>
+        <td style="hieght:40px; width:30px;"><img src="<?= $block->getBaseUrl().'pub/media/'.$value->getProfilePhoto()?>" alt=""></td>
+        <td><?= $value->getName() ?></td>
+        <td><?= $value->getScore()?></td>
+        <td><?= $value->getRemarks()?></td>
+        <td><?= $value->getCreatedAt()?></td>
+        <td><?= $value->getUpdatedAt()?></td>
+        <td style="display:flex;justify-content:space-around;">
+        <div class="actions">
+            <a class="action-login action-primary" href="<?= $block->getFormAction()."index?id=".$value->getId()?>"><span>Edit</span></a>
+            <?php $url = $block->getFormAction()."delete?id=".$value->getId()?>
+            <a class="action-login action-primary" href="#" onClick="deleteData('<?= $url ?>')"><span>Delete</span></a>
+        </div>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</Table>
+
+<script>
+    function deleteData(url) {
+        if(confirm("Are you want to delete?")){
+            window.location.href = url;
+        }
+
+    }
+</script>
